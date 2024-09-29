@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "hand-written-text-recognition"
+version = "0.3.1"
+description = ""
+authors = ["John Smith <john@example.com>"]
+readme = "README.md"
+packages = [{ include = "src", to = "hand_written_text_recognition" }]
+package-mode = true
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12"
+opencv-python = "4.9.0.80"
+kaldiio = "2.18.0"
+symspellpy = "6.7.7"
+tqdm = "4.66.1"
+tensorflow = "2.15.0"
+editdistance = "0.6.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
