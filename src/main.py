@@ -64,10 +64,9 @@ if __name__ == "__main__":
     max_text_length = 256
 
     charset_base = (
-        " !\"#$%'(),-.0123456789:;?@\\]"
+        " !\"#$%'(),-.0123456789:;?@*\\]"
         "ABCDEFGHIJKLMNOPQRSTUVWXZ"
         "abcdefghijklmnopqrstuvwxyz"
-        "ªºÀÁÉÚàáâãçèéêíóôõú"
         "ČčĆćĐđŽžŠš"
     )
 
