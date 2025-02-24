@@ -280,6 +280,26 @@ class Dataset():
                     dataset[pt]['gt'].append(' '.join(open(text_path, encoding="utf8").read()))
 
         return dataset
+    
+    def _reg_1_3_4_words(self):
+        """Mine log dataset reader for words - region 1, 3 and 4"""
+        dataset = self._init_dataset()
+
+        paths = {"train": open(os.path.join(self.source, "train.txt")).read().splitlines(),
+                 "valid": open(os.path.join(self.source, "val.txt")).read().splitlines(),
+                 "test": open(os.path.join(self.source, "test.txt")).read().splitlines()}
+
+        for pt in self.partitions:
+            for item in paths[pt]:
+                image_path = item[:]
+                text_path = image_path.replace('images', 'labels').replace('jpg', 'txt')
+
+                if os.path.isfile(image_path) and os.path.isfile(text_path):
+                    dataset[pt]['path'].append(text_path)
+                    dataset[pt]['dt'].append(image_path)
+                    dataset[pt]['gt'].append(' '.join(open(text_path, encoding="utf8").read()))
+
+        return dataset
 
     def _iam(self):
         """IAM dataset reader"""
